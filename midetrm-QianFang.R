@@ -5,6 +5,12 @@ library(qualityTools)
 # create a vector of w exponential waiting times with lambda = lam
 
 wait <- function(w,lam){
+   
+     ## Su- set up a range for input values
+     # set up range for input value
+     if(lam<0)stop("lambda must be larger than 0")
+     if(w<0)stop("waiting times must be larger than 0") 
+    
   a = NULL
   for(i in 1:w){
     a = c(a,rexp(1,rate = lam))
